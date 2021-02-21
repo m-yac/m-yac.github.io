@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="authoring-tool" content="Adobe_Animate_CC"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matthew Yacavone | About me</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  #animation_container {
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+  html {
+    background-color: #a2a8ab;
+    background-image: url(IMG_9325_blowout4711x3141_delaylongest_rep.jpg);
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center center;
+    height: 100%;
+  }
+  .faceimg {
+    width: 85%;
+  }
+  .column {
+    float: left;
+  }
+  .col33 { width: 33%; }
+  .col67 { width: 67%; }
+  .col45 { width: 45%; }
+  .col55 { width: 55%; }
+  /* Clear floats after the columns
+     From: https://www.w3schools.com/howto/howto_css_two_columns.asp; */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .awfulhack1:after { content: "On the right"; }
+  .awfulhack2:after { content: ""; }
+  /* ...and if the screen is less than 720px wide: */
+  @media screen and (max-width:720px) {
+    .column {
+      width: 100%;
+    }
+    .faceimg {
+    	width: 34%;
+    }
+    .faceimgcontent {
+    	text-align: center;
+    }
+    .awfulhack1:after { content: "Below"; }
+    .awfulhack2:after { content: "further "; }
+  }
+</style>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="cobordism.js"></script>
+<script src="cobordism_html.js"></script>
+</head>
+<body onload="init();">
+<h2>About me</h2>
+
+<div class="row">
+  <div class="column col33">
+  	<p class="content faceimgcontent"><img src="my_dumb_face.jpg" class=faceimg></p>
+  </div>
+  <div class="column col67">
+    <p class=content>I am a recent honors graduate of Haverford College currently working as a Software Engineer/Researcher at <a href="https://galois.com" class=alt>Galois</a>. I graduated with a major in Mathematics and minor in Computer Science, and love tackling challenging problems at the intersection of  the two.<br><br>
+    In computer science I'm interested in:</p>
+    <ul class="content">
+      	 <li>Functional programming</li>
+      	 <li>Type theory (specifically dependent type theory)</li>
+      	 <li>Formal verification of software <!-- (see: <a href="https://deepspec.org/event/dsss18/" class=alt>DSS18</a>) --></li>
+      	</ul>
+    <p class="content">and in mathematics:</p>
+          	<ul class="content">
+      		<li>Topology (specifically knot theory)</li>
+      		<li>Algebraic topology / homotopy theory</li>
+      		<li>Univalent foundations / homotopy type theory</li>
+      	</ul>
+    </p>
+  </div>
+</div>
+
+<p class=content> Lately I've been enthralled by the programming language <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php" class=alt>Agda</a>, and in particular, its cubical mode. Within the past year I've started contributing to the <a href="https://github.com/agda/cubical" class=alt>agda/cubical</a> library – <a href="https://github.com/agda/cubical/pull/154" class=alt>my first major contribution</a> involved representing the integers as a higher inductive type, and <a href="https://github.com/agda/cubical/pull/230" class=alt>my latest</a> involves a nontrivial proof that really tested my cubical reasoning. I've also added homotopy colimits (<a href-"https://github.com/agda/cubical/pull/175" class=alt>#175</a>) and am currently working on adding real projective spaces (<a href="https://github.com/agda/cubical/pull/252" class=alt>#252</a>), CW complexes (the first step being <a href="https://github.com/agda/cubical/pull/214" class=alt>#214</a>), and n-truncated/connected maps (mentioned in <a href="https://github.com/agda/cubical/issues/219" class=alt>#219</a>).</p>
+
+<p class=content> You can also find <a href="https://github.com/m-yac/tt-in-cagda" class=alt>here</a> an experiment with formalizing type theory in cubical Agda with Bryn Mawr professor <a href="https://cs.brynmawr.edu/~rae/" class="alt">Richard Eisenberg</a>, and <a href="https://github.com/m-yac/agda-knots" class=alt>here</a> a formalization of some basic knot theory in Agda. I've also <a href="https://github.com/ghc/ghc/commit/512eeb9bb9a81e915bfab25ca16bc87c62252064" class=alt>contributed to the Glasgow Haskell Compiler</a>, extending Haskell's type system in relation to type families and RULEs.</p>
+
+<div class="row">
+  <div class="column col45">
+    <p class=content><span class=awfulhack1></span> is an example of (warning: jargon incoming!) a decomposable lagrangian cobordism between two legendrian knots. The animation is a series of cross-sections of a particular surface which connects two knots: an unknotted loop (the pinched-looking circle) and a trefoil knot. Pictured <span class=awfulhack2></span> below are frames of a decomposable cobordism between the twisted doubles of the same two knots, the construction of which I present in <a href="https://arxiv.org/abs/1710.00943" class=alt>this preprint</a>, coauthored with Haverford professor <a href="http://ww3.haverford.edu/math/jsabloff/Josh_Sabloff/Home.html" class="alt">Josh Sabloff</a> and two of my peers. (A much updated version is currently being prepared.)</p>
+  </div>
+  <div class="column col55">
+  	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00)">
+	<canvas id="canvas" style="display: block; background-color:rgba(255, 255, 255, 1.00); width:50%"></canvas>
+	<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden;display: block;">
+	</div>
+	</div>
+  </div>
+</div>
+
+<p class=content><img src="cobordism_frames.png" style="width: 100%"></p>
+
+<p class=content>I also enjoy photography, and dabble in glitch art – for example, the background of this page on desktop. I also love creating theater, and have been the lighting designer for 8 student productions over the past four years.</p>
+
+<p class=content>Send me an email! matthew (at) yacavone (dot) net</p>
+
+<br>
+
+<p class="content" style="text-align: center"><span style="color: #555">Site last updated: March 2020</span> · <a href="index.html" class=grey>Home</a></p>
+
+</body>
+</html>

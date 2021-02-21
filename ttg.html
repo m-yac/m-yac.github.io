@@ -1,0 +1,146 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Random Thesis Title Generator!</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  body { max-width: none; }
+  h1,h2,h3{ font-size: 180%; }  
+  .foot { position:fixed; bottom:0px; left: 0px; right: 0px }
+</style>
+</head>
+<body>
+<h2><h2>
+<h2>And your thesis title is...</h2>
+<div id="content" style="font-size: 110%"></div>
+<h2></h2>
+<a onclick="return run()" class=alt>Again!</a><br style="line-height:25px">
+<a onclick="return restore()" class=alt style="font-size: 60%">(Go back)</a>
+<h2></h2><h2></h2>
+<div class=foot><a href="https://docs.google.com/document/d/1V4mAfDhNX7g4j2IHAHkYbTeGZVcaLgS7SALgDT3k5M8" class=alt style="font-size:75%">Any ideas?</a> · <a href="https://docs.google.com/document/d/1x4mm1wvsn1FH15WRJISHL_TR2Kpdv2IkxG2-XoqzGQA" class=alt style="font-size:75%">Save your favorites!</a><h2></h2></div>
+
+<script>
+// How do you read a file in Javascipt? I have no goddamn idea.
+var input = `[1] [2]: [3] [4][5] [6] in [7] [8]
+
+1 adj.
+Foucault's
+Contentious
+Corrupt
+Radical
+Unexpected
+Unexplained
+Broken
+Rediscovered
+Embodied
+Panoptic
+
+2 noun, pl.
+Paradigms
+Tensions
+Livelihoods
+Truths
+Horizons
+Perspectives
+Lives
+Bodies
+
+3 verb, -ing
+Queering
+Exploring
+Juxtaposing
+Imagining
+Modeling
+Examining
+Reimagining
+Investigating
+Narrating
+Archiving
+
+4 prefix
+_
+Post-
+Pre-
+Meta-
+Neo-
+Anti-
+
+5 adjective
+Industrial
+Structural
+Modern
+Enlightenment
+Punk
+Linguistic
+Intellectual
+Grassroots
+Anarcho-Communist
+Popular
+
+6 noun
+Ceramics
+Prose
+Architecture
+Extractivism
+Social Movements
+Academia
+Activism
+Carpentry
+Prose
+Communities
+Narratives
+
+7 time
+Contemporary
+18th Century
+Medieval
+Prehistoric
+Ancient
+Post-War
+16th Century
+Early 20th Century
+
+8 place
+Reykjavik
+Utah
+Antarctica
+Galapagos
+Morocco
+Cuba
+Idaho
+French Guiana
+Paris
+Philadelphia
+Portland, Oregon
+Flavortown`.split("\n\n").map(x => x.split("\n"));
+
+memory = []
+
+function randomElem(xs) {
+    return xs[Math.floor(Math.random() * xs.length)];
+}
+
+function run() {
+    var fmt = randomElem(input[0]);
+    for (var i = 1; i < input.length; i++) {
+        var token  = (input[i][0].split(" "))[0]
+        var choice = randomElem(input[i].slice(1));
+        if (choice == "_") {
+            choice = "";
+        }
+        fmt = fmt.replace("[" + token + "]", choice);
+    }
+    memory.push(fmt);
+    document.getElementById("content").innerHTML = fmt;
+}
+
+function restore() {
+    if (memory.length > 1) {
+        memory.pop();
+        document.getElementById("content").innerHTML = memory[memory.length - 1];
+    }
+}
+
+window.onload = run;
+</script>
+</body>
+</html>
