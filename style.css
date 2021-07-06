@@ -72,6 +72,7 @@ a.grey:visited:focus {
 
 .centerimg {
   display: block;
+  margin-top: 33px;
   margin-left: auto;
   margin-right: auto;
   width: 85%;

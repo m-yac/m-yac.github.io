@@ -37,8 +37,8 @@
     display: table;
     clear: both;
   }
-  .awfulhack1:after { content: "On the right"; }
-  .awfulhack2:after { content: ""; }
+  .awfulhackWide   { display: inline; }
+  .awfulhackNarrow { display: none; }
   /* ...and if the screen is less than 720px wide: */
   @media screen and (max-width:720px) {
     .column {
@@ -50,8 +50,8 @@
     .faceimgcontent {
     	text-align: center;
     }
-    .awfulhack1:after { content: "Below"; }
-    .awfulhack2:after { content: "further "; }
+    .awfulhackWide   { display: none; }
+    .awfulhackNarrow { display: inline; }
   }
 </style>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
@@ -63,7 +63,7 @@
 
 <div class="row">
   <div class="column col33">
-  	<p class="content faceimgcontent"><img src="my_dumb_face.jpg" class=faceimg></p>
+  	<p class="content faceimgcontent"><img src="my_dumb_face.jpg" title="my_dumb_face.jpg" name="my_dumb_face.jpg" class=faceimg></p>
   </div>
   <div class="column col67">
     <p class=content>Hi, I'm Matt! I'm currently working as a software engineer and researcher at <a href="https://galois.com" class=alt>Galois</a>.
@@ -86,24 +86,24 @@
 
 <p class=content> Lately I've been learning a lot about tuning theory, the theoretical side of microtonal music (AKA xenharmonic music). I just added <a href="https://en.xen.wiki/w/User:M-yac/Neutral_Intervals_and_the_FJS" class="alt">a page to the Xenharmonic wiki</a> discussing how one could modify the <a href="https://misotanni.github.io/fjs/en/index.html" class="alt">Functional Just System</a> to better represent certain types of intervals. To go along with that, I made an <a href="fjs-explorer" class="alt">interactive webpage</a> for experimenting with different modifications of the FJS. I also made a tool called <a href="https://www.yacavone.net/xen-calc/" class="alt">xen-calc</a>, which streamlines the many different calculations and conversions I found myself doing while learning about the subject. </p>
 
-<p class=content> I love the programming language <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php" class=alt>Agda</a>, and in particular, its cubical mode. In 2019 and 2020 I spent some time contributing to the <a href="https://github.com/agda/cubical" class=alt>agda/cubical</a> library – <a href="https://github.com/agda/cubical/pull/154" class=alt>my first major contribution</a> involved representing the integers as a higher inductive type, and perhaps <a href="https://github.com/agda/cubical/pull/252" class=alt>my favorite</a> involved defining the real projective spaces. I've also added homotopy colimits (<a href-"https://github.com/agda/cubical/pull/175" class=alt>#175</a>), the dunce cap surface (<a href="https://github.com/agda/cubical/pull/214" class=alt>#214</a>), the pseudo-inverse to truncation (<a href="https://github.com/agda/cubical/pull/226" class=alt>#226</a>), and localization/nullification modalities (<a href="https://github.com/agda/cubical/pull/230" class=alt>#230</a>), the last of which is my most recent and really tested my cubical reasoning.
+<p class=content> I love the programming language <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php" class=alt>Agda</a>, and in particular, its cubical mode. In 2019 and 2020 I spent some time contributing to the <a href="https://github.com/agda/cubical" class=alt>agda/cubical</a> library – <a href="https://github.com/agda/cubical/pull/154" class=alt>my first major contribution</a> involved representing the integers as a higher inductive type, and perhaps <a href="https://github.com/agda/cubical/pull/252" class=alt>my favorite</a> involved defining the real projective spaces. I've also added homotopy colimits (<a href="https://github.com/agda/cubical/pull/175" class=alt>#175</a>), the dunce cap surface (<a href="https://github.com/agda/cubical/pull/214" class=alt>#214</a>), the pseudo-inverse to truncation (<a href="https://github.com/agda/cubical/pull/226" class=alt>#226</a>), and localization/nullification modalities (<a href="https://github.com/agda/cubical/pull/230" class=alt>#230</a>), the last of which is my most recent and really tested my cubical reasoning.
 
 <p class=content> You can also find <a href="https://github.com/m-yac/tt-in-cagda" class=alt>here</a> an experiment with formalizing type theory in cubical Agda with Bryn Mawr professor <a href="https://cs.brynmawr.edu/~rae/" class="alt">Richard Eisenberg</a>, and <a href="https://github.com/m-yac/agda-knots" class=alt>here</a> a formalization of some basic knot theory in Agda. I've also <a href="https://github.com/ghc/ghc/commit/512eeb9bb9a81e915bfab25ca16bc87c62252064" class=alt>contributed to the Glasgow Haskell Compiler</a>, extending Haskell's type system in relation to type families and RULEs.</p>
 
 <div class="row">
   <div class="column col45">
-    <p class=content><span class=awfulhack1></span> is an example of (warning: jargon incoming!) a decomposable lagrangian cobordism between two legendrian knots. The animation is a series of cross-sections of a particular surface which connects two knots: an unknotted loop (the pinched-looking circle) and a trefoil knot. Pictured <span class=awfulhack2></span> below are frames of a decomposable cobordism between the twisted doubles of the same two knots, the construction of which I present in <a href="https://arxiv.org/abs/2103.03340" class=alt>this preprint</a>, coauthored with Haverford professor <a href="http://ww3.haverford.edu/math/jsabloff/Josh_Sabloff/Home.html" class="alt">Josh Sabloff</a> and UPenn postdoctoral fellow Roberta Guadagni.</p>
+    <p class=content><span class="awfulhackWide">On the right</span><span class="awfulhackNarrow">Below</span> is an example of (warning: jargon incoming!) a decomposable lagrangian cobordism between two legendrian knots. The animation is a series of cross-sections of a particular surface which connects two knots: an unknotted loop (the pinched-looking circle) and a trefoil knot. Pictured <span class="awfulhackNarrow">further</span> below are frames of a decomposable cobordism between the twisted doubles of the same two knots, the construction of which I present in <a href="https://arxiv.org/abs/2103.03340" class=alt>this preprint</a>, coauthored with Haverford professor <a href="http://ww3.haverford.edu/math/jsabloff/Josh_Sabloff/Home.html" class="alt">Josh Sabloff</a> and UPenn postdoctoral fellow Roberta Guadagni.</p>
   </div>
   <div class="column col55">
   	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00)">
-	<canvas id="canvas" style="display: block; background-color:rgba(255, 255, 255, 1.00); width:50%"></canvas>
+	<canvas id="canvas" title="Cobordism animation" name="Cobordism animation" style="display: block; background-color:rgba(255, 255, 255, 1.00); width:50%"></canvas>
 	<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden;display: block;">
 	</div>
 	</div>
   </div>
 </div>
 
-<p class=content><img src="cobordism_frames.png" style="width: 100%"></p>
+<p class=content><img src="cobordism_frames.png" title="Twisted double cobordism frames" name="Twisted double cobordism frames" style="width: 100%"></p>
 
 <p class=content>I also enjoy photography, and dabble in glitch art – for example, the background of this page on desktop. I also love creating theater, and was the lighting designer for 8 student productions over the course of my four years at Haverford.</p>
 
