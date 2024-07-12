@@ -7,7 +7,7 @@
 }
 
 body {
-  --tile-min-width: 30px;
+  --tile-min-width: 20px;
   --tile-max-width: 50px;
   --tile-gap: 3px;
   --dragons-title-width: 80px;
@@ -117,7 +117,7 @@ p {
   min-width: calc(659/210 * var(--tile-min-width));
   max-width: calc(659/210 * var(--tile-max-width));
   flex-basis: calc(659/210 * var(--tile-min-width));
-  background-image: url(tiles/meldKong.svg);
+  background-image: url(tiles/MeldKong.svg);
   aspect-ratio: 659 / 255;
 }
 .meldKong span {
@@ -139,7 +139,7 @@ p {
   min-width: calc(634/210 * var(--tile-min-width));
   max-width: calc(634/210 * var(--tile-max-width));
   flex-basis: calc(634/210 * var(--tile-min-width));
-  background-image: url(tiles/meldFU.svg);
+  background-image: url(tiles/MeldFU.svg);
   aspect-ratio: 634 / 255;
 }
 .meldFU span {
