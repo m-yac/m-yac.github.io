@@ -1,0 +1,186 @@
+
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  --tile-min-width: 30px;
+  --tile-max-width: 50px;
+  --tile-gap: 3px;
+  --dragons-title-width: 80px;
+  --title-margin: 10px;
+  text-align: center;
+  padding-bottom: 100px;
+  font-family: "EB Garamond";
+  font-size: 12.5pt;
+}
+
+h2 {
+  margin-top: 60px;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.body-wrap {
+  margin: auto;
+  max-width: 650px;
+}
+
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--tile-gap);
+  margin: 10px 0;
+}
+
+.title {
+  flex-basis: calc(1.8 * var(--tile-max-width));
+  display: flex;
+  justify-content: right;
+  text-align: right;
+}
+.title h4 {
+  margin: 0 var(--title-margin) 0 0;
+  align-self: center;
+}
+
+.dragons-title {
+  flex-basis: var(--dragons-title-width);
+}
+
+.middle-title {
+  flex-basis: unset;
+  justify-content: center;
+  text-align: center;
+}
+.middle-title h4 {
+  margin: 0 var(--title-margin);
+}
+
+.tile {
+  min-width: var(--tile-min-width);
+  max-width: var(--tile-max-width);
+  flex-basis: var(--tile-min-width);
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.spacer {
+  min-width: 0;
+  max-width: calc(2 * var(--tile-max-width) + 3 * var(--tile-gap) - var(--dragons-title-width) - var(--title-margin));
+  flex-basis: 0;
+}
+
+.tile-group {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  min-width: var(--tile-min-width);
+  max-width: var(--tile-max-width);
+  flex-basis: var(--tile-min-width);
+  background-image: url(tiles/Blank.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  aspect-ratio: 210 / 255;
+}
+.tile-group span {
+  font-size: 80%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 7%;
+  padding-right: 9.5%;
+  align-self: center;
+}
+.tile-group .small-tile-text {
+  font-size: 70%;
+}
+
+.meld {
+  min-width: calc(509/210 * var(--tile-min-width));
+  max-width: calc(509/210 * var(--tile-max-width));
+  flex-basis: calc(509/210 * var(--tile-min-width));
+  background-image: url(tiles/Meld.svg);
+  aspect-ratio: 509 / 255;
+}
+.meld span {
+  padding-right: 4%;
+}
+
+.meldKong {
+  min-width: calc(659/210 * var(--tile-min-width));
+  max-width: calc(659/210 * var(--tile-max-width));
+  flex-basis: calc(659/210 * var(--tile-min-width));
+  background-image: url(tiles/meldKong.svg);
+  aspect-ratio: 659 / 255;
+}
+.meldKong span {
+  padding-right: 1%;
+}
+
+.eye {
+  min-width: calc(360/210 * var(--tile-min-width));
+  max-width: calc(360/210 * var(--tile-max-width));
+  flex-basis: calc(360/210 * var(--tile-min-width));
+  background-image: url(tiles/Eye.svg);
+  aspect-ratio: 360 / 255;
+}
+.eye span {
+  padding-right: 6%;
+}
+
+.meldFU {
+  min-width: calc(634/210 * var(--tile-min-width));
+  max-width: calc(634/210 * var(--tile-max-width));
+  flex-basis: calc(634/210 * var(--tile-min-width));
+  background-image: url(tiles/meldFU.svg);
+  aspect-ratio: 634 / 255;
+}
+.meldFU span {
+  padding-top: unset;
+  padding-bottom: 6%;
+  padding-right: 6%;
+}
+
+.meldFUKong {
+  min-width: calc(762/210 * var(--tile-min-width));
+  max-width: calc(762/210 * var(--tile-max-width));
+  flex-basis: calc(762/210 * var(--tile-min-width));
+  background-image: url(tiles/MeldFUKong.svg);
+  aspect-ratio: 762 / 255;
+}
+.meldFUKong span {
+  padding-top: unset;
+  padding-bottom: 6%;
+  padding-right: 2%;
+}
+
+.meldFDKong {
+  min-width: calc(762/210 * var(--tile-min-width));
+  max-width: calc(762/210 * var(--tile-max-width));
+  flex-basis: calc(762/210 * var(--tile-min-width));
+  background-image: url(tiles/MeldFDKong.svg);
+  aspect-ratio: 762 / 255;
+}
+.meldFDKong span {
+  padding-top: unset;
+  padding-bottom: 6%;
+  padding-right: 2%;
+}
+
+.callout {
+  margin-left: 8px;
+  margin-right: 8px;
+  align-self: center;
+}
+
+.explanation {
+  margin: 22px auto;
+  max-width: 86%;
+}
