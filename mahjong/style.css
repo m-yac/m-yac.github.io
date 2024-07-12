@@ -1,11 +1,4 @@
 
-.eb-garamond {
-  font-family: "EB Garamond", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
 body {
   --tile-min-width: 20px;
   --tile-max-width: 50px;
@@ -14,7 +7,8 @@ body {
   --title-margin: 10px;
   text-align: center;
   padding-bottom: 100px;
-  font-family: "EB Garamond";
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
   font-size: 12.5pt;
 }
 
@@ -25,6 +19,10 @@ h2 {
 p {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .body-wrap {
@@ -123,14 +121,14 @@ p {
   padding-right: 2%;
 }
 
-.eye {
+.pair {
   min-width: calc(360/210 * var(--tile-min-width));
   max-width: calc(360/210 * var(--tile-max-width));
   flex-basis: calc(360/210 * var(--tile-min-width));
   background-image: url(tiles/Eye.svg);
   aspect-ratio: 360 / 255;
 }
-.eye span {
+.pair span {
   padding-right: 7%;
 }
 
@@ -182,4 +180,76 @@ p {
 .explanation {
   margin: 22px auto;
   max-width: 86%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  top: 100%;
+  left: 50%;
+  margin-left: -70px;
+  background-color: white;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 6px;
+  border: solid;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* Custom <select> */
+
+.selectContainer {
+  height: 25px;
+  /* border: 1px solid #111; */
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #DDD;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  /* Source: https://stackoverflow.com/a/42087251 */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: top 50% right 1px;
+}
+.selectContainer:hover,
+.selectContainer:focus {
+  box-shadow: 0 0 2pt 1pt #6AF;
+  /* # outline: 2px solid #6AF; */
+}
+.selectContainer select {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  height: 23px;
+  padding-left: 5px;
+  font-family: bitter, serif;
+  font-size: 85%;
+  color: var(--fg-color);
+}
+#titleSelectContainer {
+  margin-left: 5px;
+  width: 43px;
+}
+#titleSelectContainer select {
+  width: 43px;
 }

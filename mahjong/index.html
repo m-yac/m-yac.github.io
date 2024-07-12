@@ -5,11 +5,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="index.js"></script>
 </head>
 <body>
 <div class="body-wrap">
 
 <h1>A Concise Mahjong Reference Sheet</h1>
+
+<label for="tileSelect">How many starting tiles?</label>
+<div id="titleSelectContainer" class="selectContainer">
+  <select id="tileSelect" title="Tiles" aria-label="Tiles">
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="16">16</option>
+  </select>
+</div>
 
 <h2>The Tiles</h2>
 
@@ -104,12 +115,12 @@
   <img class="tile" src="tiles/MJd3b-.svg"/>
   <img class="tile" src="tiles/MJd3b-.svg"/>
   <div clas="spacer"></div>
-  <div class="title"><h4>Eye<br>(2x)</h4></div>
+  <div class="title"><h4>Pair<br>(2x)</h4></div>
   <img class="tile" src="tiles/MJd3b-.svg"/>
   <img class="tile" src="tiles/MJd3b-.svg"/>
 </div>
 <div class="explanation">
-  <p>An <b>Eye</b> is a set of any <b>two</b> of the same tile, a <b>Pong</b> is a set of any <b>three</b> of the same tile, and a  <b>Kong</b> is the set of all <b>four</b> copies of the same tile.</p>
+  <p>An <b>Pair</b> is a set of any <b>two</b> of the same tile, a <b>Pong</b> is a set of any <b>three</b> of the same tile, and a  <b>Kong</b> is the set of all <b>four</b> copies of the same tile.</p>
   <p>A <b>Chow</b> is a run of any <b>three</b> numbered tiles (i.e. <b>Dots</b>, <b>Bamboos</b>, or <b>Characters</b>).</p>
 </div>
 
@@ -119,19 +130,32 @@
   <div class="tile tile-group meld"><span>Pong, Kong, or Chow</span></div>
   <div class="tile tile-group meld"><span>Pong, Kong, or Chow</span></div>
   <div class="tile tile-group meld"><span>Pong, Kong, or Chow</span></div>
-  <div class="tile tile-group eye"><span>Eye</span></div>
+  <div class="tile tile-group meld only16 hidden"><span>Pong, Kong, or Chow</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
 </div>
 <div class="explanation">
-  <p>A winning hand is made up of a number of <b>Pongs</b>/<b>Kongs</b>/<b>Chows</b> and one <b>Eye</b>.</p>
-  <p>For <b>13-</b> or <b>14-Tile Mahjong</b>, you need <b>four</b> <b>Pongs</b>/<b>Kongs</b>/<b>Chows</b>, and for <b>16-Tile Mahjong</b> you need <b>five</b> <b>Pongs</b>/<b>Kongs</b>/<b>Chows</b>.</p>
+  <p>A winning hand is made up of <span class="tooltip"><b class="not16">four</b><b class="only16 hidden">five</b><span class="tooltiptext"><b class="not16">Five</b><b class="only16 hidden">Four</b>, when playing <b><span class="not16">16-</span><span class="only16 hidden">13- or 14-</span>Tile Mahjong</b>.</span></span> <b>Pongs</b>/<b>Kongs</b>/<b>Chows</b> and <b>one</b> <b>Pair</b>.</p>
+</div>
+
+<h3>Special Mahjong: Seven Pairs</h3>
+<div class="tiles">
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group pair"><span>Pair</span></div>
+  <div class="tile tile-group meld only16 hidden"><span>Pong, Kong, or Chow</span></div>
+</div>
+<div class="explanation">
+  <p>A rare alternative way to win is with a hand made up of <span class="tooltip"><b>seven Pairs</b><span class="only16 hidden"> and <b>one</b> <b>Pong</b>/<b>Kong</b>/<b>Chow</b></span><span class="tooltiptext"><span class="not16">And <b>one</b> <b>Pong</b>/<b>Kong</b>/<b>Chow</b></span><span class="only16 hidden">Only the <b>seven Pairs</b></span>, when playing <b><span class="not16">16-</span><span class="only16 hidden">13- or 14-</span>Tile Mahjong</b>.</span></span>.</p>
 </div>
 
 <h2>Gameplay</h2>
 
 <div class="explanation">
-  <p>Each player starts with the same number of tiles, usually <b>13</b>, <b>14</b>, or <b>16</b>.</p>
-  <p>When playing <b>13-Tile Mahjong</b>, on each turn you <b>draw</b> a tile then <b>discard</b> a tile.</p>
-  <p>When playing <b>14-</b> or <b>16-Tile Mahjong</b>, on each turn you <b>discard</b> then <b>draw</b>.</p>
+  <p>On each turn you <span class="tooltip"><b class="not14">draw</b> <b class="only14 hidden">discard</b> then <b class="not14">discard</b><b class="only14 hidden">draw</b><span class="tooltiptext"><b class="not14">Discard</b> <b class="only14 hidden">Draw</b> then <b class="not14">draw</b><b class="only14 hidden">discard</b>, when playing <b><span class="not14">14-</span><span class="only14 hidden">13- or 16-</span>Tile Mahjong</b>.</span></span> a tile.</p>
   <p>Remember that if the drawn tile is a <b>flower</b>, set it aside and draw again.</p>
 </div>
 
@@ -152,7 +176,7 @@
 <div class="tiles">
   <div class="tile tile-group"><span class="small-tile-text">Stolen</span></div>
   <div class="title middle-title"><h4>+</h4></div>
-  <div class="tile tile-group eye"><span class="small-tile-text">In hand</span></div>
+  <div class="tile tile-group pair"><span class="small-tile-text">In hand</span></div>
   <div class="title middle-title"><h4>— Meld —></h4></div>
   <div class="tile tile-group meldFU"></div>
 </div>
@@ -190,7 +214,8 @@
 <h2>About</h2>
 <div class="explanation">
   <p>This reference sheet is based on the general rules of Mahjong as described by <a href="https://www.mahjongpictureguide.com">mahjongpictureguide.com</a> and <a href="https://en.wikipedia.org/wiki/Mahjong#Old_Hong_Kong_mahjong_rules">Wikipedia</a>.</p>
-  <p>Not included are the way tiles are set up and distributed at the beginning of the game, the way different rounds of the game are coordinated, and scoring – which varies tremendously between versions. Another common point of variation between versions is what a winning hand looks like – some versions add additional winning hands, and American Mahjong disallows the standard winning hand on top of the former. Filipino Mahjong treats winds and dragons as flowers.</p>
+  <p>Not included are the way tiles are set up and distributed at the beginning of the game, the way different rounds of the game are coordinated, and scoring – which varies tremendously between versions. Another common point of variation between versions is what a winning hand looks like – some versions add additional winning hands, and American Mahjong disallows the standard winning hands all together. Also notable is that Filipino Mahjong treats winds and dragons as flowers.</p>
+  <p>Tile graphics are based on the <a href="https://commons.wikimedia.org/w/index.php?title=Category:SVG_Oblique_illustrations_of_Mahjong_tiles&fileuntil=MJs3r-%3D.svg#mw-category-media">Wikimedia tileset</a> created by <a href="https://commons.wikimedia.org/wiki/User:Cangjie6">Cangjie6</a>.</p>
 </div>
 
 </div>
