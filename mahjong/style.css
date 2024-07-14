@@ -225,7 +225,6 @@ table tr th:first-child {
 table tr td:last-child,
 table tr th:last-child {
   border-right: 0;
-  max-width: 325px;
 }
 
 .td-type {
@@ -234,6 +233,9 @@ table tr th:last-child {
 }
 .td-value {
   text-align: center;
+}
+.td-long {
+  max-width: 0;
 }
 
 /* Custom <select> */

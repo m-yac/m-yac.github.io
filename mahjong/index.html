@@ -216,47 +216,35 @@
 
 <h2>Example Scoring System</h2>
 <div class="explanation">
-  <p>When the game ends, either by someone getting <b>Mahjong</b> or there being <b>no more tiles</b> to draw, everyone's <b>score</b> is calculated and money/chips/points are distributed.</p>
-  <p>The way the <b>score</b> is calculated varies tremendously between versions of Mahjong. This is one example of a scoring system, based on <b>Filipino Mahjong</b>:</p>
+  <p>The way the <b>score</b> is calculated varies tremendously between versions of Mahjong. This section gives one example of a scoring system – primarily based on <b>Filipino Mahjong</b> with all modifications underlined and explained in the hovertext.</p>
 </div>
+
+<h3>Score for a Winning Hand</h3>
 <table>
   <tr>
-    <th class="td-type">When</th>
     <th class="td-value">Score</th>
     <th>Name</th>
     <th>Description</th>
   </tr>
   <tr>
-    <td class="td-type" rowspan="6">Win</td>
-    <td class="td-value">4</td>
+    <td class="td-value">1</td>
     <td>Winning</td>
     <td>Completed a <b>Mahjong</b></td>
   </tr>
   <tr>
-    <td class="td-value">2</td>
+    <td class="td-value" rowspan="5"><sup>1</sup>&frasl;<sub>2</sub></td>
     <td>Seven Pairs</td>
     <td>Completed a <b>Seven Pairs Mahjong</b></td>
   </tr>
   <tr>
-    <td class="td-value" rowspan="4">1</td>
-    <td>All Pongs</td>
-    <td><b>Mahjong</b> with only <b>Pongs</b>/<b>Kongs</b>, <b>no</b> <b>Chows</b></td>
+    <td><span class="tooltip">All Dragons<span class="tooltiptext">Ignore this rule when playing <b>Filipino Mahjong</b>, or any other variant where <b>Wind</b> and <b>Dragon</b> tiles are considered <b>flowers</b></span></span></td>
+    <td>Hand contains all <b>three Dragon</b> tiles</b></td>
   </tr>
   <tr>
-    <td>All Chows</td>
-    <td><b>Mahjong</b> with only <b>Chows</b>, <b>no</b> <b>Pongs</b>/<b>Kongs</b></td>
+    <td><span class="tooltip">All Winds<span class="tooltiptext">Ignore this rule when playing <b>Filipino Mahjong</b>, or any other variant where <b>Wind</b> and <b>Dragon</b> tiles are considered <b>flowers</b></span></span></td>
+    <td>Hand contains all <b>four Wind</b> tiles</td>
   </tr>
   <tr>
-    <td>Concealed</td>
-    <td><b>Mahjong</b> with <b>no melds</b>, except <b>concealed melds</b></td>
-  </tr>
-  <tr>
-    <td>Revealed</td>
-    <td><b>Mahjong</b> where every <b>Pong</b>/<b>Kong</b>/<b>Chow</b> was <b>melded</b> before winning – <b>no concealed melds</b></td>
-  </tr>
-  <tr>
-    <td class="td-type" rowspan="5">Win or Lose</td>
-    <td class="td-value" rowspan="4">2</td>
     <td>Straight</td>
     <td>Hand contains <b>1-9</b> of a single <b>suit</b> in <b>Chows</b></td>
   </tr>
@@ -265,32 +253,36 @@
     <td>Hand contains only tiles from <b>one suit</b></td>
   </tr>
   <tr>
-    <td>Concealed Kong</td>
-    <td>Made a <b>Concealed Kong</b></td>
+    <td class="td-value" rowspan="6"><sup>1</sup>&frasl;<sub>4</sub></td>
+    <td>Only Pongs</td>
+    <td>Hand with only <b>Pongs</b>/<b>Kongs</b>, <b>no</b> <b>Chows</b></td>
   </tr>
   <tr>
-    <td>Pong to Kong</td>
-    <td>Made a <b>melded Kong</b> from a <b>melded Pong</b></td>
+    <td>Only Chows</td>
+    <td>Hand with only <b>Chows</b>, <b>no</b> <b>Pongs</b>/<b>Kongs</b></td>
   </tr>
   <tr>
-    <td class="td-value">1</td>
-    <td>Stolen Kong</td>
-    <td>Made a <b>melded Kong</b> from a <b>stolen</b> tile</td>
+    <td>Concealed</td>
+    <td>Hand with <b>no melds</b>, except for <b>concealed melds</b></td>
   </tr>
   <tr>
-    <td class="td-type" rowspan="2">Lose</td>
-    <td class="td-value" rowspan="2">1</td>
+    <td>Revealed</td>
+    <td class="td-long">Hand where every <b>Pong</b>/<b>Kong</b>/<b>Chow</b> was <b>melded</b> before winning – <b>no concealed melds</b></td>
+  </tr>
+  <tr>
     <td>Difficult Wait</td>
     <td>Needed <b>one</b> specific tile to win</td>
   </tr>
   <tr>
-    <td>Back to Back</td>
-    <td>Hand contains <b>two</b> <b>Pairs</b>, needed <b>one</b> tile to win</td>
+    <td>Quick Win</td>
+    <td>Win before the <b>fifth</b> tile is <b>discarded</b></td>
   </tr>
 </table>
 <div class="explanation">
-  <p>When playing <b>Filipino Mahjong</b>, or any version where <b>Winds</b> and <b>Dragons</b> are considered <b>flowers</b>, these are the rules for awarding bonus points:</p>
+  <p>When a player wins by <b>stealing</b> a discarded tile, all players except the player who <b>discarded</b> pay the winner the total of the winner's score – the player who <b>discarded</b> who pays <b>double</b>. When a player wins by <b>drawing</b> a tile, all players pay <b>double</b>.</p>
 </div>
+
+<h3>Bonus Score</h3>
 <table>
   <tr>
     <th class="td-value">Score</th>
@@ -298,26 +290,34 @@
     <th>Description</th>
   </tr>
   <tr>
-    <td class="td-value">2</td>
-    <td>No Flower Mahjong</td>
-    <td>Complete a <b>Mahjong</b> with <b>no flowers</b></td>
+    <td class="td-value" rowspan="3"><sup>1</sup>&frasl;<sub>2</sub></td>
+    <td>Set of Flowers</td>
+    <td>Drawing a <span class="tooltip">complete set of <b>four</b> <b>flowers</b> (numbered <b>1-4</b>)<span class="tooltiptext">Instead, <b>any 13 flowers</b>, when playing <b>Filipino Mahjong</b>, or any other variant where <b>Wind</b> and <b>Dragon</b> tiles are considered <b>flowers</b></span></span></td>
   </tr>
   <tr>
-    <td class="td-value" rowspan="3">1</td>
-    <td>No Flower Loss</td>
-    <td>Lose with <b>no flowers</b></td>
+    <td>Concealed Kong</td>
+    <td>Making a <b>Concealed Kong</b></td>
   </tr>
   <tr>
-    <td>No Flower Deal</td>
-    <td>Dealt <b>no flowers</b> at the <b>start</b> of the game</td>
+    <td>Pong to Kong</td>
+    <td>Making a <b>melded Kong</b> from a <b>melded Pong</b></td>
   </tr>
   <tr>
-    <td>Thirteen Flowers</td>
-    <td>Collect <b>thirteen flowers</b></td>
+    <td class="td-value" rowspan="3"><sup>1</sup>&frasl;<sub>4</sub></td>
+    <td>Stolen Kong</td>
+    <td>Making a <b>melded Kong</b> from a <b>stolen</b> tile</td>
+  </tr>
+  <tr>
+    <td>No Flowers</td>
+    <td><span class="tooltip">Winning<span class="tooltiptext">Or, being dealt <b>no flowers</b> at the <b>start</b>, when playing <b>Filipino Mahjong</b>, or any other variant where <b>Wind</b> and <b>Dragon</b> tiles are considered <b>flowers</b></span></span> the game with <b>no flowers</b></td>
+  </tr>
+  <tr>
+    <td><span class="tooltip">Seat Flower<span class="tooltiptext">Ignore this rule when playing <b>Filipino Mahjong</b>, or any other variant where <b>Wind</b> and <b>Dragon</b> tiles are considered <b>flowers</b></span></span></td>
+    <td>Drawing the <b>flower</b> tile corresponding to your <b>seat</b></td>
   </tr>
 </table>
 <div class="explanation">
-  <p>Otherwise, you get <b>1</b> point for <b>2 flowers</b>, <b>2</b> for <b>4 flowers</b>, and <b>3</b> for all <b>8 flowers</b>.</p>
+  <p>These bonus <b>scores</b> for events related to <b>melding Kongs</b> and <b>drawing flowers</b> are paid out by all players <b>immediately</b> when they occur.</p>
 </div>
 
 
