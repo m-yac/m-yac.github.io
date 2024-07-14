@@ -181,6 +181,9 @@ p {
   margin: 22px auto;
   max-width: 87%;
 }
+.block {
+  text-align: left;
+}
 
 .tooltip {
   position: relative;
