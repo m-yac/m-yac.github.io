@@ -3,6 +3,9 @@
 <title>Matthew Yacavone | Interactives</title>
 <link rel="stylesheet" href="style.css" />
 <style>
+  body {
+    max-width: 850px;
+  }
   .flexContainer {
     display:flex;
     justify-content: space-evenly;
@@ -16,6 +19,16 @@
   }
   h4 {
     margin-bottom: 0;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 3px solid #DDD;
+    border-radius: 5px;
+  }
+  img:hover,
+  img:focus {
+    border-color: #ACF;
   }
   .description {
     font-size: 90%;
@@ -42,16 +55,29 @@
 
 <div class="flexContainer">
   <div class="flexBox">
-    <h4><a href="xen-calc" class="alt">xen-calc</a></h4>
+    <h4><a href="xen-calc"><img src="preview_xen_calc.png"></a>
+        <a href="xen-calc" class="alt">xen-calc</a></h4>
     <p class="description">A general-purpose calculator/converter for microtonal music.</p>
   </div>
   <div class="flexBox">
-    <h4><a href="fjs-explorer" class="alt">Custom FJS Explorer</a></h4>
+    <h4><a href="fjs-explorer"><img src="preview_visual_fjs.png"></a>
+        <a href="fjs-explorer" class="alt">Custom FJS Explorer</a></h4>
     <p class="description">A tool for experimenting with modifications of the Functional Just System.</p>
   </div>
   <div class="flexBox">
-    <h4><a href="tanakh" class="alt">Visual <i>Tanakh</i></a></h4>
+    <h4><a href="tanakh"><img src="preview_tanakh.png"></a>
+        <a href="tanakh" class="alt">Visual <i>Tanakh</i></a></h4>
     <p class="description">A visualization of which portions of the <i>Tanakh</i> (Hebrew bible) are read in services.</p>
+  </div>
+  <div class="flexBox">
+    <h4><a href="mahjong"><img src="preview_mahjong.png"></a>
+        <a href="mahjong" class="alt">Mahjong Guide</a></h4>
+    <p class="description">An article going over the basic rules of Mahjong, with one interactive element.</p>
+  </div>
+  <div class="flexBox">
+    <h4><a href="vowel-space"><img src="preview_vowel_space.png"></a>
+        <a href="vowel-space" class="alt">Vowel Space</a></h4>
+    <p class="description">Work in progress visualization of the <a href="https://www.englishspeechservices.com/blog/the-vowel-space/" class="alt">vowel space</a>.</p>
   </div>
 </div>
 
