@@ -5,8 +5,12 @@
   const pathname = window.location.pathname;
   const search = window.location.search;
   const hash = window.location.hash;
-  // Convert to lowercase, with a special case for ttTikkun
-  const new_pathname = pathname.toLowerCase().replaceAll('tttikkun', 'ttTikkun');
+  // Convert to lowercase, with some special cases
+  const new_pathname = pathname.toLowerCase()
+    .replaceAll('shapeshifter99', 'shape-shifter')
+    .replaceAll('shape-shifter-250', 'shape-shifter')
+    .replaceAll('tttikkun', 'ttTikkun')
+  // Redirect if we have a new URL
   if (pathname != new_pathname) {
     window.location.replace(new_pathname + search + hash);
   }
