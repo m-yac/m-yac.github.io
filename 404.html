@@ -1,0 +1,28 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matthew Yacavone | 404</title>
+<script>
+  const pathname = window.location.pathname;
+  const search = window.location.search;
+  const hash = window.location.hash;
+  // Convert to lowercase, with a special case for ttTikkun
+  const new_pathname = pathname.toLowerCase().replaceAll('tttikkun', 'ttTikkun');
+  if (pathname != new_pathname) {
+    window.location.replace(new_pathname + search + hash);
+  }
+  else {
+    document.addEventListener("DOMContentLoaded", () =>
+      document.getElementById('body').style.visibility = '');
+  }
+</script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body id="body" style="visibility: hidden;">
+<h1 class="centerimg"> :( </h1>
+<h4 style="margin-bottom: 20px;">guess I haven't made this page yet...</h4>
+404 File not found
+<br>
+
+<p class="content" style="text-align: center"><a href="https://www.yacavone.net" class=grey>Home</a></p>
+</body>
+</html>
